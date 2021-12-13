@@ -1,14 +1,16 @@
 <div class="container-fluid">
-	<div class="row">
+	<div class="row text center">
 
 		<?php foreach ($barang as $brg) : ?>
 
 			<div class="card" style="width: 16rem;">
-  <img src="..." class="card-img-top" alt="...">
+  <img src="<?php echo base_url().'/uploads/'.$brg->gambar ?>" class="card-img-top" alt="...">
   <div class="card-body">
     <h5 class="card-title"><?php echo $brg->nama_sayuran ?></h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
+    <small><?php echo $brg->keterangan ?></small><br>
+    <span class="badge bg-success">Rp.<?php echo $brg->harga ?></span>
+    <a href="#" class="btn btn-sm btn-primary">Tambah ke Keranjang</a>
+     <a href="#" class="btn btn-sm btn-success">Detail</a>
   </div>
 </div>
 
