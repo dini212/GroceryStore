@@ -24,8 +24,9 @@
         <div class="card-body">
         <h5 class="card-title"><?php echo $brg->nama_sayuran ?></h5>
         <small><?php echo $brg->keterangan ?></small><br>
-        <span class="badge bg-success">Rp.<?php echo $brg->harga ?></span><br>
-        <a href="#" class="btn btn-sm btn-primary">Tambah ke Keranjang</a>
+        <span class="badge bg-success">Rp.
+          <?php echo $brg->harga ?></span><br>
+          <?php echo anchor('dashboard/tambah_ke_keranjang/'.$brg ->id_brg,'<div class="btn btn-sm btn-primary">Tambah ke Keranjang</div>') ?>
         <a href="#" class="btn btn-sm btn-success">Detail</a>
       </div>
     </div>
