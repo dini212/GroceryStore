@@ -1,9 +1,25 @@
 <div class="container-fluid">
-	<div class="row text center">
+
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+          <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active" ></li>
+             <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+         </ol> 
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="<?php echo base_url('assets/img/slider1.jpg')?>" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="<?php echo base_url('assets/img/slider2.jpg')?>" class="d-block w-100" alt="...">
+            </div>
+          </div>
+        </div>
+
+	<div class="row text-center mt-3">
 
 		<?php foreach ($barang as $brg) : ?>
 
-			<div class="card" style="width: 16rem;">
+			<div class="card ml-3" style="width: 16rem;">
         <img src="<?php echo base_url().'/assets/img/'.$brg->gambar ?>" class="card-img-top" alt="...">
         <div class="card-body">
         <h5 class="card-title"><?php echo $brg->nama_sayuran ?></h5>
