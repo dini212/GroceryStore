@@ -42,4 +42,43 @@ class data_barang extends CI_Controller{
 		$this->model_barang->tambah_barang('sayuran', $data);
 		redirect('admin/data_barang/index');
 	}
+
+	public function edit($id) {
+		$where = array('id_sayuran =>$id');
+		$data['barang'] = $this->model_barang->edit_barang($where, 'sayuran')->result();
+	$this->load->view('templates_admin/header');
+    $this->load->view('templates_admin/sidebar');
+    $this->load->view('admin/edit_barang', $data);
+    $this->load->view('templates_admin/footer');
+	}
+
+	public function update() {
+		$id          = $this->input->POST('id_sayuran');
+		$nama_brg    = $this->input->POST('nama_sayuran');
+		$keterangan  = $this->input->POST('keterangan');
+		$kategori    = $this->input->POST('kategori');
+		$harga  	 = $this->input->POST('harga');
+		$stok 		 = $this->input->POST('stok');
+
+		$data = array(
+			'nama_sayuran'	=> $nama_brg,
+			'keterangan'	=> $keterangan,
+			'kategori'		=> $kategori,
+			'harga'			=> $harga,
+			'stok'			=> $stok
+		);
+
+		$where = array(
+			'id_sayuran' => $id
+		);
+
+		$this->model_barang->update_data($where,$data,'sayuran');
+		redirect('admin/data_barang/index');
+	}
+
+	public function hapus($id){
+		$where = array('id_sayuran' => $id);
+		$this->model_barang->hapus_data($where, 'sayuran');
+		redirect('admin/data_barang/index');
+	}
 }
