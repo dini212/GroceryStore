@@ -19,13 +19,13 @@
 
 		<?php foreach ($barang as $brg) : ?>
 
-			<div class="card ml-3 mt-3" style="width: 16rem;">
+			<div class="card ml-3 mb-3" style="width: 16rem;">
         <img src="<?php echo base_url().'/assets/img/'.$brg->gambar ?>" class="card-img-top" alt="...">
         <div class="card-body">
-        <h5 class="card-title"><?php echo $brg->nama_sayuran ?></h5>
+        <h5 class="card-title mb-1"><?php echo $brg->nama_sayuran ?></h5>
         <small><?php echo $brg->keterangan ?></small><br>
-        <span class="badge bg-success">Rp.
-          <?php echo $brg->harga ?></span><br>
+        <span class="badge bg-success mb-3">Rp.
+          <?php echo number_format($brg->harga, 0, ',','.') ?></span><br>
           <?php echo anchor('dashboard/tambah_ke_keranjang/'.$brg ->id_sayuran,'<div class="btn btn-sm btn-primary">Tambah ke Keranjang</div>') ?>
         <a href="#" class="btn btn-sm btn-success">Detail</a>
       </div>

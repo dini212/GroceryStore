@@ -166,7 +166,7 @@
                                     $keranjang = 'Keranjang Belanja: '.$this->cart->total_items(). ' items' 
                                     ?>
                                     
-                                    <?php echo $keranjang ?>
+                                    <?php echo anchor ('dashborad/detail_keranjang', $keranjang )  ?>
                                 </li>
                             </ul>
                         </div>
