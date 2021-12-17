@@ -22,4 +22,17 @@ class model_barang extends CI_model{
 		$this->db->where($where);
 		$this->db->delete($table);
 	}
+
+	public function find($id)
+	{
+		$result = $this->db->where('id_sayuran', $id)
+						   ->limit(1)
+						   ->get('sayuran');
+		if($result->num_rows() > 0)
+		{
+			return $result->row();
+		} else {
+			return array();
+		}
+	}
 }

@@ -16,10 +16,10 @@ class Dashboard extends CI_Controller {
     	$barang = $this->model_barang->find($id);
 
     	$data = array(
-        	'id'      => $barang->id_brg,
+        	'id'      => $barang->id_sayuran,
        		'qty'     => 1,
         	'price'   => $barang->harga,
-        	'name'    => $barang->nama_brg
+        	'name'    => $barang->nama_sayuran
         
 	);
 

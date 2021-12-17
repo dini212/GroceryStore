@@ -163,7 +163,7 @@
                             <ul calss="nav navbar-nav navbar-right">
                                 <li>
                                     <?php 
-                                    $keranjang = 'Keranjang Belanja: '.$this->cart->total_items(). 'items' 
+                                    $keranjang = 'Keranjang Belanja: '.$this->cart->total_items(). ' items' 
                                     ?>
                                     
                                     <?php echo $keranjang ?>
