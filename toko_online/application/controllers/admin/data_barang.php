@@ -39,17 +39,17 @@ class data_barang extends CI_Controller{
 		'gambar'			=> $gambar_brg
 		);
 
-		$this->model_barang->tambah_barang('sayuran', $data);
+		$this->model_barang->tambah_barang($data, 'sayuran');
 		redirect('admin/data_barang/index');
 	}
 
 	public function edit($id) {
-		$where = array('id_sayuran =>$id');
+		$where = array('id_sayuran' =>$id);
 		$data['barang'] = $this->model_barang->edit_barang($where, 'sayuran')->result();
-	$this->load->view('templates_admin/header');
-    $this->load->view('templates_admin/sidebar');
-    $this->load->view('admin/edit_barang', $data);
-    $this->load->view('templates_admin/footer');
+		$this->load->view('templates_admin/header');
+    	$this->load->view('templates_admin/sidebar');
+    	$this->load->view('admin/edit_barang', $data);
+    	$this->load->view('templates_admin/footer');
 	}
 
 	public function update() {

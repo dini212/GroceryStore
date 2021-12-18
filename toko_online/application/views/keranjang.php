@@ -11,7 +11,7 @@
  		</tr>
 
  		<?php
- 		$no=1;
+ 		$no=0;
  		foreach ($this->cart->contents() as $items) : ?>
 
  			<tr>

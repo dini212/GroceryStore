@@ -29,7 +29,7 @@
 
             <!-- Heading -->
             <div class="sidebar-heading">
-                Interface
+                PAKET MENU SAYUR KOMPLIT
             </div>
 
             <!-- Nav Item - Pages Collapse Menu -->
@@ -50,7 +50,7 @@
                 </div>
             </li>
 
-            <!-- Nav Item - Utilities Collapse Menu -->
+            <!-- Nav Item - Utilities Collapse Menu
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
                     aria-expanded="true" aria-controls="collapseUtilities">
@@ -67,14 +67,15 @@
                         <a class="collapse-item" href="utilities-other.html">Other</a>
                     </div>
                 </div>
-            </li>
+            </li> -->
 
             <!-- Divider -->
             <hr class="sidebar-divider">
 
-            <!-- Heading
+            <!--Heading -->
             <div class="sidebar-heading">
-            </div> -->
+                Lain-Lain
+            </div> 
 
             
 
@@ -166,7 +167,7 @@
                                     $keranjang = 'Keranjang Belanja: '.$this->cart->total_items(). ' items' 
                                     ?>
                                     
-                                    <?php echo anchor ('dashborad/detail_keranjang', $keranjang )  ?>
+                                    <?php echo anchor ('dashboard/detail_keranjang', $keranjang )  ?>
                                 </li>
                             </ul>
                         </div>
