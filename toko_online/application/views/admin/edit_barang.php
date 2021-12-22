@@ -7,7 +7,7 @@
 		<form method="POST" action="<?php echo base_url().'admin/data_barang/update' ?>">
 
 			<div class="for-group">
-				<label>Nama Barang</label>
+				<label>Nama Sayuran</label>
 				<input type="text" name="nama_sayuran" class="form-control" value="<?php echo $brg->nama_sayuran ?>">
 			</div>
 

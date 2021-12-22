@@ -1,5 +1,6 @@
 <div class="container-fluid">
-	<button class="btn btn-sm btn-primary mb-3" data_toogle="modal" data_target="#tambah_barang"><i class="fas fa-plus fa-sm"></i> Tambah Barang</button>
+	<button type="button" class="btn btn-primary mb-3" data-toggle="modal" data-target="#tambah_barang">
+		<i class="fas fa-plus fa-sm"></i> Tambah Barang</button>
 
 	<table class="table table-bordered">
 	<tr>
@@ -17,13 +18,12 @@
 	foreach ($barang as $brg) : ?>
 
 		<tr>
-			<td><?php $no++ ?></td>
-			<td><?php $brg->nama_sayuran ?></td>
-			<td><?php $brg->keterangan ?></td>
-			<td><?php $brg->kategori ?></td>
-			<td><?php $brg->harga ?></td>
-			<td><?php $brg->stok ?></td>
-			<td><div class="btn btn-success btn-sm"><i class="fas fa-search-plus"></i></div></td>
+			<td><?php echo $no++ ?></td>
+			<td><?php echo $brg->nama_sayuran ?></td>
+			<td><?php echo $brg->keterangan ?></td>
+			<td><?php echo $brg->kategori ?></td>
+			<td><?php echo $brg->harga ?></td>
+			<td><?php echo $brg->stok ?></td>
 			<td><?php echo anchor('admin/data_barang/edit/' .$brg->id_sayuran, '<div class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></div>') ?></td>
 			<td><?php echo anchor('admin/data_barang/hapus/' .$brg->id_sayuran, '<div class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></div>') ?></td>
 
@@ -40,10 +40,11 @@
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">FORM INPUT SAYURAN</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+		</button>
       </div>
       <div class="modal-body">
-       	<form action="<?php echo base_url(). 'config/controllers/admin/data_barang/tambah_aksi' ?>" method="post" enctype="multipart/form-data" >
+       	<form action="<?php echo base_url(). 'admin/data_barang/tambah_aksi' ?>" method="post" enctype="multipart/form-data" >
 
 
 
@@ -59,7 +60,11 @@
 
        		<div class="form-group">
        			<label>Kategori</label>
-       			<input type="text" name="kategori" class="form-control">
+       			<select class="form-control" name="kategori">
+            <option>Rempah - rempah</option>  
+            <option>Sayuran</option>
+            <option>Buah</option>
+            </select>
        		</div>
 
        		<div class="form-group">
@@ -79,7 +84,7 @@
        		
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Tutup</button>
         <button type="submit" class="btn btn-primary">Simpan</button>
       </div>
 
