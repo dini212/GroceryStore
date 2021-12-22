@@ -34,7 +34,7 @@ class Model_invoice extends CI_Model{
 	public function tampil_data()
 	{
 		$result = $this->db->get('tb_invoice');
-		if($result->num_rows() > 0){
+		if($result->num_rows() >= 0){
 			return $result->result();
 		} else {
 			return false;

@@ -11,7 +11,7 @@
 			<th>Aksi</th>
 		</tr>
 
-		<?php foreach ($invoice as $inv): ?>
+		<?php foreach($invoice as $inv): ?>
 		
 		<tr>
 			<td><?php echo $inv->id ?></td>
