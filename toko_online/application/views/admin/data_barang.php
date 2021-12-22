@@ -34,7 +34,6 @@
 	</table>
 </div>
 
-
 <!-- Modal -->
 <div class="modal fade" id="tambah_barang" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
