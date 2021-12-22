@@ -19,7 +19,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="<?php echo base_url('admin/dahsboard_admin') ?>">
+                <a class="nav-link" href="<?php echo base_url('admin/dashboard_admin') ?>">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -32,7 +32,7 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="<?php echo base_url('admin/invoices') ?>">
+                <a class="nav-link" href="<?php echo base_url('admin/invoice') ?>">
                     <i class="fas fa-fw fa-file-invoice"></i>
                     <span>Invoices</span></a>
             </li>
@@ -42,12 +42,12 @@
                 <button class="rounded-circle border-0" id="sidebarToggle"></button>
             </div>
 
-            <!-- Sidebar Message -->
+            <!-- Sidebar Message
             <div class="sidebar-card d-none d-lg-flex">
                 <img class="sidebar-card-illustration mb-2" src="img/undraw_rocket.svg" alt="...">
                 <p class="text-center mb-2"><strong>SB Admin Pro</strong> is packed with premium features, components, and more!</p>
                 <a class="btn btn-success btn-sm" href="https://startbootstrap.com/theme/sb-admin-pro">Upgrade to Pro!</a>
-            </div>
+            </div> -->
 
         </ul>
         <!-- End of Sidebar -->

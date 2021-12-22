@@ -19,7 +19,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="<?php echo base_url('dashboard/index')?>">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -29,7 +29,7 @@
 
             <!-- Heading -->
             <div class="sidebar-heading">
-                Interface
+                PAKET MENU SAYUR KOMPLIT
             </div>
 
             <!-- Nav Item - Pages Collapse Menu -->
@@ -41,7 +41,6 @@
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Custom Components:</h6>
                         <a class="collapse-item" href="buttons.html">Sayur asem</a>
                         <a class="collapse-item" href="cards.html">Sayur bayem</a>
                         <a class="collapse-item">Sayur sop</a>
@@ -50,7 +49,7 @@
                 </div>
             </li>
 
-            <!-- Nav Item - Utilities Collapse Menu -->
+            <!-- Nav Item - Utilities Collapse Menu
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
                     aria-expanded="true" aria-controls="collapseUtilities">
@@ -67,24 +66,36 @@
                         <a class="collapse-item" href="utilities-other.html">Other</a>
                     </div>
                 </div>
-            </li>
+            </li> -->
 
             <!-- Divider -->
             <hr class="sidebar-divider">
 
-            <!-- Heading
+            <!--Heading -->
             <div class="sidebar-heading">
-            </div> -->
+                Lain-Lain
+            </div> 
 
             
 
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="tables.html">
+                <a class="nav-link" href="<?php echo base_url('kategori/rempahrempah')?>">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Rempah-rempah</span></a>
             </li>
-            
+
+            <li class="nav-item">
+                <a class="nav-link" href="<?php echo base_url('kategori/Sayuran')?>">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Sayuran</span></a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="<?php echo base_url('kategori/buah')?>">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Buah</span></a>
+            </li>
 
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
@@ -159,7 +170,17 @@
                             </div>
                         </li>
 
-                        
+                        <div class="navbar">
+                            <ul calss="nav navbar-nav navbar-right">
+                                <li>
+                                    <?php 
+                                    $keranjang = 'Keranjang Belanja: '.$this->cart->total_items(). ' items' 
+                                    ?>
+                                    
+                                    <?php echo anchor ('dashboard/detail_keranjang', $keranjang )  ?>
+                                </li>
+                            </ul>
+                        </div>
 
                         
 
