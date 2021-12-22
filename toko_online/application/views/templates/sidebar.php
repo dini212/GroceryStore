@@ -80,11 +80,22 @@
 
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="tables.html">
+                <a class="nav-link" href="<?php echo base_url('kategori/rempahrempah')?>">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Rempah-rempah</span></a>
             </li>
-            
+
+            <li class="nav-item">
+                <a class="nav-link" href="<?php echo base_url('kategori/Sayuran')?>">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Sayuran</span></a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="<?php echo base_url('kategori/buah')?>">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Buah</span></a>
+            </li>
 
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
