@@ -34,7 +34,7 @@
             <li class="nav-item">
                 <a class="nav-link" href="<?php echo base_url('admin/invoice') ?>">
                     <i class="fas fa-fw fa-file-invoice"></i>
-                    <span>Invoices</span></a>
+                    <span>Invoice</span></a>
             </li>
 
             <!-- Sidebar Toggler (Sidebar) -->
