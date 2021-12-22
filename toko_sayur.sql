@@ -1,11 +1,12 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 22, 2021 at 07:05 AM
--- Server version: 10.4.21-MariaDB
--- PHP Version: 8.0.10
+
+-- Waktu pembuatan: 22 Des 2021 pada 09.06
+-- Versi server: 10.4.18-MariaDB
+-- Versi PHP: 8.0.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +25,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `sayuran`
+-- Struktur dari tabel `sayuran`
 --
 
 CREATE TABLE `sayuran` (
@@ -38,7 +39,7 @@ CREATE TABLE `sayuran` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `sayuran`
+-- Dumping data untuk tabel `sayuran`
 --
 
 INSERT INTO `sayuran` (`id_sayuran`, `nama_sayuran`, `keterangan`, `kategori`, `harga`, `stok`, `gambar`) VALUES
@@ -53,25 +54,79 @@ INSERT INTO `sayuran` (`id_sayuran`, `nama_sayuran`, `keterangan`, `kategori`, `
 (16, 'Jahe', 'harga/ons', 'Rempah - rempah', 3500, 10, 'jahe1.jpeg'),
 (17, 'Kunyit', 'harga/ons', 'Rempah - rempah', 3000, 10, 'kunyit1.jpg');
 
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `tb_invoice`
+--
+
+CREATE TABLE `tb_invoice` (
+  `id` int(11) NOT NULL,
+  `nama` varchar(56) NOT NULL,
+  `alamat` varchar(255) NOT NULL,
+  `tgl_pesan` datetime NOT NULL,
+  `batas_bayar` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `tb_pesanan`
+--
+
+CREATE TABLE `tb_pesanan` (
+  `id` int(11) NOT NULL,
+  `id_invoice` int(11) NOT NULL,
+  `id_sayuran` int(11) NOT NULL,
+  `nama_sayuran` varchar(50) NOT NULL,
+  `jumlah` int(3) NOT NULL,
+  `harga` int(10) NOT NULL,
+  `pilihan` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `sayuran`
+-- Indeks untuk tabel `sayuran`
 --
 ALTER TABLE `sayuran`
   ADD PRIMARY KEY (`id_sayuran`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- Indeks untuk tabel `tb_invoice`
+--
+ALTER TABLE `tb_invoice`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indeks untuk tabel `tb_pesanan`
+--
+ALTER TABLE `tb_pesanan`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `sayuran`
+-- AUTO_INCREMENT untuk tabel `sayuran`
 --
 ALTER TABLE `sayuran`
-  MODIFY `id_sayuran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id_sayuran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+
+--
+-- AUTO_INCREMENT untuk tabel `tb_invoice`
+--
+ALTER TABLE `tb_invoice`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT untuk tabel `tb_pesanan`
+--
+ALTER TABLE `tb_pesanan`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
