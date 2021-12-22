@@ -15,6 +15,7 @@
           </div>
         </div>
 
+<div class="container-fluid">
 	<div class="row text-center mt-3">
 
 		<?php foreach ($barang as $brg) : ?>
