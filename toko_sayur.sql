@@ -3,10 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
-
--- Waktu pembuatan: 22 Des 2021 pada 09.06
--- Versi server: 10.4.18-MariaDB
--- Versi PHP: 8.0.3
+-- Generation Time: Apr 05, 2022 at 10:28 AM
+-- Server version: 10.4.18-MariaDB
+-- PHP Version: 8.0.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -25,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `sayuran`
+-- Table structure for table `sayuran`
 --
 
 CREATE TABLE `sayuran` (
@@ -39,12 +38,12 @@ CREATE TABLE `sayuran` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `sayuran`
+-- Dumping data for table `sayuran`
 --
 
 INSERT INTO `sayuran` (`id_sayuran`, `nama_sayuran`, `keterangan`, `kategori`, `harga`, `stok`, `gambar`) VALUES
-(1, ' Bayam', 'harga/ikat', 'Sayuran', 1000, 15, 'bayam.jpg'),
-(3, 'Sawi', 'harga/ikat', 'Sayuran', 2000, 10, 'Sawi.jpg'),
+(1, ' Bayam', 'harga/ikat', 'Sayuran', 1000, 14, 'bayam.jpg'),
+(3, 'Sawi', 'harga/ikat', 'Sayuran', 2000, 9, 'Sawi.jpg'),
 (4, 'Wortel', 'harga/kg', 'Sayuran', 18000, 10, 'Wortel.jpg'),
 (7, 'Tomat', 'harga/kg', 'Buah', 10000, 12, 'tomat.jpg'),
 (8, 'Cabai', 'harga/ons', 'Buah', 7500, 5, 'cabairawit.jpg'),
@@ -57,7 +56,7 @@ INSERT INTO `sayuran` (`id_sayuran`, `nama_sayuran`, `keterangan`, `kategori`, `
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_invoice`
+-- Table structure for table `tb_invoice`
 --
 
 CREATE TABLE `tb_invoice` (
@@ -68,10 +67,18 @@ CREATE TABLE `tb_invoice` (
   `batas_bayar` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `tb_invoice`
+--
+
+INSERT INTO `tb_invoice` (`id`, `nama`, `alamat`, `tgl_pesan`, `batas_bayar`) VALUES
+(1, '', '', '2022-04-05 15:25:33', '2027-04-05 15:25:33'),
+(2, 'Mutia', 'jl Bintar', '2022-04-05 15:26:16', '2027-04-05 15:26:16');
+
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_pesanan`
+-- Table structure for table `tb_pesanan`
 --
 
 CREATE TABLE `tb_pesanan` (
@@ -85,48 +92,67 @@ CREATE TABLE `tb_pesanan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
+-- Dumping data for table `tb_pesanan`
+--
+
+INSERT INTO `tb_pesanan` (`id`, `id_invoice`, `id_sayuran`, `nama_sayuran`, `jumlah`, `harga`, `pilihan`) VALUES
+(1, 1, 1, ' Bayam', 1, 1000, ''),
+(2, 2, 3, 'Sawi', 1, 2000, '');
+
+--
+-- Triggers `tb_pesanan`
+--
+DELIMITER $$
+CREATE TRIGGER `pesanan_penjualan` AFTER INSERT ON `tb_pesanan` FOR EACH ROW BEGIN 
+	UPDATE sayuran SET stok = stok-NEW.jumlah
+    WHERE id_sayuran = NEW.id_sayuran;
+END
+$$
+DELIMITER ;
+
+--
 -- Indexes for dumped tables
 --
 
 --
--- Indeks untuk tabel `sayuran`
+-- Indexes for table `sayuran`
 --
 ALTER TABLE `sayuran`
   ADD PRIMARY KEY (`id_sayuran`);
 
 --
--- Indeks untuk tabel `tb_invoice`
+-- Indexes for table `tb_invoice`
 --
 ALTER TABLE `tb_invoice`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `tb_pesanan`
+-- Indexes for table `tb_pesanan`
 --
 ALTER TABLE `tb_pesanan`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `sayuran`
+-- AUTO_INCREMENT for table `sayuran`
 --
 ALTER TABLE `sayuran`
-  MODIFY `id_sayuran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id_sayuran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_invoice`
+-- AUTO_INCREMENT for table `tb_invoice`
 --
 ALTER TABLE `tb_invoice`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_pesanan`
+-- AUTO_INCREMENT for table `tb_pesanan`
 --
 ALTER TABLE `tb_pesanan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

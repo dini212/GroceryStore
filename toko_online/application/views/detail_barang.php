@@ -9,13 +9,13 @@
   		    <div class="row">
    		   
    		  	  <div class="col-md-4">  
-   		  			  <img src="<?php echo base_url().'/uploads/'$brg->gambar ?>" class="card-img=-top">
+   		  			  <img src="<?php echo base_url().'/assets/img/' .$brg->gambar ?>" class="card-img-top">
    		  	</div> 
    		   	<div class="col-md-8"> 
-   		   		<table class="tabel">
+   		   		<table class="table">
    		   			<tr>
    		   				<td>Nama Produk</td>
-   		   				<td><strong><?php echo $brg->nama_brg ?></strong></td>
+   		   				<td><strong><?php echo $brg->nama_sayuran ?></strong></td>
    		   			</tr> 
 
    		   			<tr>
